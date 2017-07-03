@@ -4,28 +4,3 @@
 .mat-primary .span-spacer {
     width: 5px;
 }
-
-.mat-sidenav-fab-container {
-  width: auto;
-  height: 100%;
-}
-
-.mat-sidenav-fab-container md-sidenav {
-  min-width: 100%;
-}
-
-.mat-sidenav-fab-container .mat-sidenav-content,
-.mat-sidenav-fab-container md-sidenav {
-  display: flex;
-  overflow: visible;
-}
-
-.mat-scrolling-content {
-  overflow: auto;
-}
-
-.mat-fab {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-}
