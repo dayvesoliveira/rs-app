@@ -1,8 +1,42 @@
 <md-toolbar color="primary">
-    <button md-button>
+    <button md-button class="button-mat-icon" (click)="sidenav.toggle()">
         <md-icon>menu</md-icon>
     </button>
-    <span class="example-spacer"></span>
+    <span class="span-spacer"></span>
     <span>{{title}}</span>
 </md-toolbar>
+
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="side" opened="true">
+
+
+        <md-list>
+            <h3 md-subheader>Configurações</h3>
+            <md-list-item *ngFor="let menu of menuItensConf">
+                <md-icon md-list-icon>folder</md-icon>
+                <h4 md-line>{{menu.name}}</h4>
+                <p md-line> {{menu.name}} </p>
+            </md-list-item>
+            
+            <md-divider></md-divider>
+            
+            <h3 md-subheader>Pedido Venda</h3>
+
+            <md-list-item *ngFor="let menu of menuItens">
+                <md-icon md-list-icon>note</md-icon>
+                <h4 md-line>{{menu.name}}</h4>
+                <p md-line> {{menu.name}} </p>
+            </md-list-item>
+        </md-list>
+    
+  </md-sidenav>
+
+  <button md-mini-fab (click)="sidenav.toggle()">
+    <md-icon>add</md-icon>
+  </button>
+
+
+ <!-- primary content -->
+
+</md-sidenav-container>
 

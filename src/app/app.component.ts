@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RSVendas';
+  menuItens = [{name: 'Vendas'},
+               {name: 'App'},
+               {name: 'Configurações'}];
+  menuItensConf = [
+               {name: 'Vendas'},
+               {name: 'App'},
+               {name: 'Configurações'}];
+
 }
