@@ -1,19 +1,92 @@
-<md-toolbar color="primary">
-    <button md-button class="button-mat-icon" (click)="sidenav.toggle()">
-        <md-icon>menu</md-icon>
-    </button>
-    <span class="span-spacer"></span>
-    <span>{{title}}</span>
-</md-toolbar>
-    
-<md-sidenav-container>
-    <md-sidenav #sidenav class="rs-sidenav-content">
-        Jolly good!
+   
+<md-sidenav-container fullscreen>
+    <md-sidenav #sidenav role="side" opened="true" class="md-sidenav">
+        <div class="my-content">
+            <md-list>
+                <h3 md-subheader>Folders</h3>
+                <md-list-item *ngFor="let menu of menuItens">
+                    <md-icon md-list-icon>folder</md-icon>
+                    <p md-line>{{menu.name}}</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <h3 md-subheader>Notes</h3>
+                <md-list-item *ngFor="let note of menuItensConf">
+                    <md-icon md-list-icon>note</md-icon>
+                    <p md-line>{{note.name}}</p>
+                </md-list-item>
+            </md-list>
+        </div>
     </md-sidenav>
-    <div class="example-sidenav-content">
-        <button md-button class="button-mat-icon">
+    
+    <md-toolbar color="primary" class="toolbar-left mat-toolbar-shadow">
+        <button md-button class="button-mat-icon" (click)="sidenav.toggle()">
             <md-icon>menu</md-icon>
         </button>
+        <span class="span-spacer"></span>
+        <span>{{title}}</span>
+    </md-toolbar>
+    
+    <br>
+
+    <md-card class="rs-md-card">
+        <md-card-title>Formulario:</md-card-title>
+        <md-card-content class="demo-basic-list">
+            <form class="example-form">
+                
+                <md-input-container class="example-full-width">
+                    <input mdInput placeholder="Company (disabled)" disabled value="Google">
+                </md-input-container>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                    <td><md-input-container class="example-full-width">
+                    <input mdInput placeholder="First name">
+                    </md-input-container></td>
+                    <td><md-input-container class="example-full-width">
+                    <input mdInput placeholder="Long Last Name That Will Be Truncated">
+                    </md-input-container></td>
+                </tr></table>
+
+                <p>
+                    <md-input-container class="example-full-width">
+                    <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+                    </md-input-container>
+                    <md-input-container class="example-full-width">
+                    <textarea mdInput placeholder="Address 2"></textarea>
+                    </md-input-container>
+                </p>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                    <td><md-input-container class="example-full-width">
+                    <input mdInput placeholder="City">
+                    </md-input-container></td>
+                    <td><md-input-container class="example-full-width">
+                    <input mdInput placeholder="State">
+                    </md-input-container></td>
+                    <td><md-input-container class="example-full-width">
+                    <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                    <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+                    </md-input-container></td>
+                </tr></table>
+            </form>
+        </md-card-content>
+    </md-card>
+    
+    <br>
+    
+    <md-card class="rs-md-card">
+        <md-card-title>Basic grid list</md-card-title>
+        <md-card-content class="demo-basic-list">
+        <md-grid-list cols="4" [rowHeight]="basicRowHeight">
+            <md-grid-tile> One </md-grid-tile>
+            <md-grid-tile> Two </md-grid-tile>
+            <md-grid-tile> Three </md-grid-tile>
+            <md-grid-tile> Four </md-grid-tile>
+        </md-grid-list>
+        </md-card-content>
+    </md-card>
+
+    <div class="rs-sidenav-content">
+
     </div>
 </md-sidenav-container>
 
