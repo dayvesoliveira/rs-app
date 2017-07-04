@@ -4,3 +4,10 @@
 .mat-primary .span-spacer {
     width: 5px;
 }
+
+.rs-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}

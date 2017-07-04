@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'RSVendas';
   menuItens = [{name: 'Vendas'},
                {name: 'App'},
-               {name: 'Configurações'}];
+               {name: 'Configuraces'}];
   menuItensConf = [
                {name: 'Vendas'},
                {name: 'App'},
-               {name: 'Configurações'}];
+               {name: 'Configuraces'}];
 
 }
