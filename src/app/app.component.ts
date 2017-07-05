@@ -27,12 +27,12 @@ export class AppComponent {
       ];
 
       dogs: Object[] = [
-        { name: 'Porter', human: 'Kara' },
-        { name: 'Mal', human: 'Jeremy' },
-        { name: 'Koby', human: 'Igor' },
-        { name: 'Razzle', human: 'Ward' },
-        { name: 'Molly', human: 'Rob' },
-        { name: 'Husi', human: 'Matias' },
+        { id:1, name: 'Porter', human: 'Kara' },
+        { id:2, name: 'Mal', human: 'Jeremy' },
+        { id:3, name: 'Koby', human: 'Igor' },
+        { id:4, name: 'Razzle', human: 'Ward' },
+        { id:5, name: 'Molly', human: 'Rob' },
+        { id:6, name: 'Husi', human: 'Matias' },
       ];
 
       basicRowHeight = 80;
