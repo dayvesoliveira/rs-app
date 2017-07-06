@@ -4,6 +4,9 @@ import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+
+import { ROUTES } from './app.routes';
 
 import { 
   FullscreenOverlayContainer,
@@ -37,6 +40,8 @@ import {
   MdTooltipModule,
   OverlayContainer,
   StyleModule } from '@angular/material';
+import { HomeComponent } from './home/home.component';
+import { NoContentComponent } from './no-content/no-content.component';
 
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
@@ -78,13 +83,16 @@ export class RsMaterialModule {}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NoContentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RsMaterialModule
+    RsMaterialModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

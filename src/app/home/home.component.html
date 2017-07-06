@@ -1,0 +1,111 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <md-card class="rs-md-card">
+                    <md-card-title>Forms</md-card-title>
+                    <md-card-content class="demo-basic-list">
+                        <form>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">
+                                    <md-input-container class="example-full-width">
+                                        <input mdInput placeholder="Company" value="Google">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-6 col-md-4">
+                                    <md-input-container class="example-full-width">
+                                        <input mdInput placeholder="First name">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-6 col-md-4">
+                                    <md-input-container class="example-full-width">
+                                        <input mdInput placeholder="First name">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xs-6 col-md-4">
+                                    <md-input-container class="example-full-width">
+                                        <input mdInput placeholder="First name">
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-12 col-md-8">
+                                    <md-input-container class="example-full-width">
+                                        <input mdInput placeholder="Long Last Name That Will Be Truncated">
+                                    </md-input-container>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-8">
+                                    <md-input-container class="example-full-width">
+                                        <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+                                    </md-input-container>
+                                </div>
+                                <div class="col-xs-6 col-md-4">
+                                    <md-input-container class="example-full-width">
+                                        <textarea mdInput placeholder="Address 2"></textarea>
+                                    </md-input-container>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                    <div class="col-xs-6 col-md-4">
+                                        <md-input-container class="example-full-width">
+                                            <input mdInput placeholder="City">
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <md-input-container class="example-full-width">
+                                            <input mdInput placeholder="State">
+                                        </md-input-container>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <md-input-container class="example-full-width">
+                                            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+                                            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+                                        </md-input-container>
+                                    </div>
+                            </div>
+
+                        </form>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+        <br>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <md-card class="rs-md-card">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let dog of HEROES; let i=index;">
+                                        <span *ngIf="i == 0">#</span>
+                                        <span *ngIf="i > 0">Head {{i}}</span>
+                                    </th>
+                                </tr> 
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let dog of HEROES">
+                                    <th scope="row">{{dog.id}}</th> 
+                                    <td>{{dog.name}}</td> 
+                                    <td>{{dog.name}}</td> 
+                                    <td>{{dog.name}}</td> 
+                                    <td>{{dog.name}}</td> 
+                                    <td>{{dog.name}}</td> 
+                                    <td>{{dog.name}}</td> 
+                                    </tr> 
+                                <tr>    
+                            </tbody>
+                        </table>
+                    </div>
+                </md-card>
+            </div>
+
+        </div>
+
+    </div>

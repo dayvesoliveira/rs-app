@@ -1,5 +1,52 @@
-
-<md-toolbar color="primary" class="toolbar-left mat-toolbar-shadow">
+<md-sidenav-container>
+    <md-sidenav #sidenav role="push" opened="false" class="md-sidenav">
+        
+        <md-toolbar color="primary" class="toolbar-left mat-toolbar-shadow">
+            <button md-button class="button-mat-icon" (click)="sidenav.toggle()">
+                <md-icon>chevron_left</md-icon>
+            </button>
+            <span class="span-spacer"></span>
+            <span class="span-toolbar" role="title">{{title}}</span>
+        </md-toolbar>
+        
+        <md-card class="rs-md-card">
+            <img md-card-image src="assets/img/empresa/logo.png">
+            <md-card-header>
+                <md-card-title>
+                    <div md-card-avatar class="avatar-header-image">
+                        Dayves Oliveira
+                    </div>
+                </md-card-title>
+                <md-card-subtitle>
+                    <p>{{title}}</p>
+                    <p>dayves@rsvarejo.com.br</p>
+                    <p>{{empresa.descBreve}}</p>
+                    <p>{{empresa.descBreveOrg}}</p>
+                    <p>{{empresa.descBreveLoja}}</p>
+                </md-card-subtitle>
+            </md-card-header>
+            <md-card-content class="demo-basic-list"></md-card-content>
+        </md-card>
+        
+        <div class="my-content">
+            
+            <md-list>
+                <h3 md-subheader>Folders</h3>
+                <md-list-item *ngFor="let menu of menuItens">
+                    <md-icon md-list-icon>folder</md-icon>
+                    <p md-line>{{menu.name}}</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <h3 md-subheader>Notes</h3>
+                <md-list-item *ngFor="let note of menuItensConf">
+                    <md-icon md-list-icon>note</md-icon>
+                    <p md-line>{{note.name}}</p>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-sidenav>
+    
+    <md-toolbar color="primary" class="toolbar-left mat-toolbar-shadow">
         <button md-button class="button-mat-icon" (click)="sidenav.toggle()">
             <md-icon>menu</md-icon>
         </button>
@@ -28,135 +75,11 @@
                 <span>Sair</span>
             </button>
         </md-menu>
-</md-toolbar>
+    </md-toolbar>
 
-<md-sidenav-container>
-    <md-sidenav #sidenav role="push" opened="false" class="md-sidenav">
-        <div class="my-content">
-            <md-list>
-                <h3 md-subheader>Folders</h3>
-                <md-list-item *ngFor="let menu of menuItens">
-                    <md-icon md-list-icon>folder</md-icon>
-                    <p md-line>{{menu.name}}</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <h3 md-subheader>Notes</h3>
-                <md-list-item *ngFor="let note of menuItensConf">
-                    <md-icon md-list-icon>note</md-icon>
-                    <p md-line>{{note.name}}</p>
-                </md-list-item>
-            </md-list>
-        </div>
-    </md-sidenav>
-    
     <br>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <md-card class="rs-md-card">
-                    <md-card-title>Forms</md-card-title>
-                    <md-card-content class="demo-basic-list">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <md-input-container class="example-full-width">
-                                        <input mdInput placeholder="Company" value="Google">
-                                    </md-input-container>
-                                </div>
-                                <div class="col-md-3">
-                                    <md-input-container class="example-full-width">
-                                        <input mdInput placeholder="First name">
-                                    </md-input-container>
-                                </div>
-                                <div class="col-md-3">
-                                    <md-input-container class="example-full-width">
-                                        <input mdInput placeholder="First name">
-                                    </md-input-container>
-                                </div>
-                            </div>
-
-                            <table class="example-full-width" cellspacing="0"><tr>
-                                <td>
-                                    <md-input-container class="example-full-width">
-                                        <input mdInput placeholder="First name">
-                                    </md-input-container>
-                                </td>
-                                <td><md-input-container class="example-full-width">
-                                <input mdInput placeholder="Long Last Name That Will Be Truncated">
-                                </md-input-container></td>
-                            </tr>
-                            </table>
-
-                            <p>
-                                <md-input-container class="example-full-width">
-                                <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-                                </md-input-container>
-                                <md-input-container class="example-full-width">
-                                <textarea mdInput placeholder="Address 2"></textarea>
-                                </md-input-container>
-                            </p>
-
-                            <table class="example-full-width" cellspacing="0">
-                                <tr>
-                                    <td>
-                                        <md-input-container class="example-full-width">
-                                            <input mdInput placeholder="City">
-                                        </md-input-container>
-                                    </td>
-                                    <td>
-                                        <md-input-container class="example-full-width">
-                                            <input mdInput placeholder="State">
-                                        </md-input-container>
-                                    </td>
-                                    <td>
-                                        <md-input-container class="example-full-width">
-                                            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-                                            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-                                        </md-input-container>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </md-card-content>
-                </md-card>
-            </div>
-
-            <div class="col-md-6">
-                <md-card class="rs-md-card">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th> 
-                                    <th>Table heading</th> 
-                                    <th>Table heading</th> 
-                                    <th>Table heading</th> 
-                                    <th>Table heading</th> 
-                                    <th>Table heading</th> 
-                                    <th>Table heading</th> 
-                                </tr> 
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let dog of dogs">
-                                    <th scope="row">{{dog.id}}</th> 
-                                    <td>{{dog.name}}</td> 
-                                    <td>{{dog.human}}</td> 
-                                    <td>{{dog.name}}</td> 
-                                    <td>{{dog.human}}</td> 
-                                    <td>{{dog.name}}</td> 
-                                    <td>{{dog.human}}</td> 
-                                    </tr> 
-                                <tr>    
-                            </tbody>
-                        </table>
-                    </div>
-                </md-card>
-            </div>
-
-        </div>
-
-    </div>
+    <router-outlet></router-outlet>
 
 </md-sidenav-container>
 
