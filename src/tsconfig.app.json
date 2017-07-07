@@ -6,7 +6,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": "",
-    /*"types": []*/
+    "types": [
+      "hammerjs"
+    ],
     "typeRoots": [
       "../node_modules/@types"
     ]

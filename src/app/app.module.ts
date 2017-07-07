@@ -40,10 +40,10 @@ import {
   MdTooltipModule,
   OverlayContainer,
   StyleModule } from '@angular/material';
-import { HomeComponent } from './home/home.component';
-import { NoContentComponent } from './no-content/no-content.component';
 
-/*import '../assets/js/utilLibRsis.js';*/
+import { HomeModule } from './home/home.module';
+import { NoContentComponent } from './no-content/no-content.component';
+import 'hammerjs';
 
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
@@ -86,7 +86,6 @@ export class RsMaterialModule {}
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     NoContentComponent
   ],
   imports: [
@@ -94,7 +93,8 @@ export class RsMaterialModule {}
     BrowserAnimationsModule,
     MaterialModule,
     RsMaterialModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6821,7 +6821,9 @@ var $W = window;
             closeListHolder: function(evt) {
                 var i = 0, forms = document.forms;
                 for (;i < forms.length; i++) {
-                    UtilRsis.CloseCombo(forms[i], evt);
+                    if ( forms[i].getAttribute('targetAction') ) {
+                        UtilRsis.CloseCombo(forms[i], evt);
+                    }
                 }
             },
             isNodeSaved: function() {
