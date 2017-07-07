@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
@@ -20,7 +21,21 @@ export class HomeComponent implements OnInit {
     { id: 20, name: 'Tornado' }
   ];
 
-  constructor() { }
+
+/*  crossDialog: CrossDialog;
+
+  constructor(crossDialog: CrossDialog){
+      this.crossDialog = crossDialog;
+  }
+
+  show() {
+      let url: string = '';
+      let params: any = [];
+      let args: any = [];
+      let callback: any;
+      let callbackargs: any;
+      this.crossDialog.show(url, params, args, callback, callbackargs);
+  }*/
 
   ngOnInit() {
   }

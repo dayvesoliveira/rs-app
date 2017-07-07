@@ -11,6 +11,12 @@
       "../node_modules/@types"
     ]
   },
+  "GlobalDependencies" : {
+  
+  },
+  "files": [
+      "typings/index.d.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

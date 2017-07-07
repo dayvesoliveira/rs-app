@@ -13,7 +13,8 @@
     ]
   },
   "files": [
-    "test.ts"
+    "test.ts",
+    "typings/index.d.ts"
   ],
   "include": [
     "**/*.spec.ts",

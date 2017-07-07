@@ -43,6 +43,8 @@ import {
 import { HomeComponent } from './home/home.component';
 import { NoContentComponent } from './no-content/no-content.component';
 
+/*import '../assets/js/utilLibRsis.js';*/
+
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
  */
