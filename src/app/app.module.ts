@@ -41,7 +41,8 @@ import {
   OverlayContainer,
   StyleModule } from '@angular/material';
 
-import { HomeModule } from './home/home.module';
+import { HomeService } from './home/home.service';
+import { HomeComponent } from "./home/home.component";
 import { NoContentComponent } from './no-content/no-content.component';
 import 'hammerjs';
 
@@ -86,6 +87,7 @@ export class RsMaterialModule {}
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     NoContentComponent
   ],
   imports: [
@@ -93,10 +95,9 @@ export class RsMaterialModule {}
     BrowserAnimationsModule,
     MaterialModule,
     RsMaterialModule,
-    RouterModule.forRoot(ROUTES),
-    HomeModule
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ HomeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

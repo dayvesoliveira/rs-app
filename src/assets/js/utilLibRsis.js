@@ -6252,7 +6252,7 @@ var $W = window;
         Rsis.UIContext = {
             _uiContexts: null,
             add: function(key, _fs) {
-                if (this._uiContexts == null) this._uiContexts = new Map();
+                if (this._uiContexts == null) this._uiContexts = new MapRsis();
                 this._uiContexts.put(key, _fs);
             },
             get: function(key) {
@@ -6283,7 +6283,7 @@ var $W = window;
                                 if (dataui !== null && dataui !== "") {
                                     return this._uiContexts.get(dataui);
                                 } else {
-                                    if (this._uiContexts == null) this._uiContexts = new Map();
+                                    if (this._uiContexts == null) this._uiContexts = new MapRsis();
                                     var _uiContext = this._uiContexts.get("default");
                                     if (!_uiContext) {
                                         _uiContext = this.getInstance();
@@ -6294,7 +6294,7 @@ var $W = window;
                             }
                         }
                     } else {
-                        if (this._uiContexts == null) this._uiContexts = new Map();
+                        if (this._uiContexts == null) this._uiContexts = new MapRsis();
                         var _uiContext = this._uiContexts.get("default");
                         if (!_uiContext) {
                             _uiContext = this.getInstance();
@@ -10477,7 +10477,7 @@ document.onclick = function(event) {
                     }
                 }
             } catch (oErr) {
-                if (typeof _Wf.StopLoadingWinDialog == "function") {
+                if (_Wf && typeof _Wf.StopLoadingWinDialog == "function") {
                     _Wf.dataUiLoadingOk = true;
                     _Wf.StopLoadingWinDialog();
                 }
@@ -10509,10 +10509,12 @@ document.onclick = function(event) {
                                             var userLoja = getAtt(body, "data-userloja") ? getAtt(body, "data-userloja") : "";
                                             dialog.setTextTitleBar(title, userLoja);
                                         }
-                                        _Wf.dataUiLoadingOk = true;
-                                        if (typeof _Wf.StopLoadingWinDialog == "function") {
-                                            _Wf.StopLoadingWinDialog();
-                                        }
+                                        if ( _Wf ) {
+                                            _Wf.dataUiLoadingOk = true;
+                                            if (typeof _Wf.StopLoadingWinDialog == "function") {
+                                                _Wf.StopLoadingWinDialog();
+                                            }
+                                        } 
                                     }
                                     return true;
                                 });
@@ -10527,9 +10529,11 @@ document.onclick = function(event) {
                                         var userLoja = getAtt(body, "data-userloja") ? getAtt(body, "data-userloja") : "";
                                         dialog.setTextTitleBar(title, userLoja);
                                     }
-                                    _Wf.dataUiLoadingOk = true;
-                                    if (typeof _Wf.StopLoadingWinDialog == "function") {
-                                        _Wf.StopLoadingWinDialog();
+                                    if (_Wf) {
+                                        _Wf.dataUiLoadingOk = true;
+                                        if (typeof _Wf.StopLoadingWinDialog == "function") {
+                                            _Wf.StopLoadingWinDialog();
+                                        }
                                     }
                                 }
                             }
@@ -10606,9 +10610,11 @@ document.onclick = function(event) {
                             dialog.setTextTitleBar(title, userLoja);
                         }
                     }
-                    _Wf.dataUiLoadingOk = true;
-                    if (typeof _Wf.StopLoadingWinDialog == "function") {
-                        _Wf.StopLoadingWinDialog();
+                    if (_Wf) {
+                        _Wf.dataUiLoadingOk = true;
+                        if (typeof _Wf.StopLoadingWinDialog == "function") {
+                            _Wf.StopLoadingWinDialog();
+                        }
                     }
                     if (forms && forms.length > 0) {
                         setDataUIInCpts(forms, obj.id);
@@ -10658,9 +10664,11 @@ document.onclick = function(event) {
                 }
             } catch (oErr) {
                 outPrint(oErr, ".initialize", this);
-                _Wf.dataUiLoadingOk = true;
-                if (typeof _Wf.StopLoadingWinDialog == "function") {
-                    _Wf.StopLoadingWinDialog();
+                if (_Wf) {
+                    _Wf.dataUiLoadingOk = true;
+                    if (typeof _Wf.StopLoadingWinDialog == "function") {
+                        _Wf.StopLoadingWinDialog();
+                    }
                 }
             }
             return false;
@@ -11100,7 +11108,7 @@ var _Wf = window.frames["ldn"];
         }
     };
     Properties = {
-        map: new Map(),
+        map: new MapRsis(),
         setProperty: function(_key, _value) {
             this.map.put(_key, _value);
         },
@@ -12009,7 +12017,7 @@ function validaQtdChars(_c, _dc) {
     return false;
 }
 
-function Map() {
+function MapRsis() {
     this.keyArray = new Array();
     this.valArray = new Array();
     this.put = function(key, val) {
@@ -13155,7 +13163,7 @@ this._Wf = Rsis.fn.loader.getWf();
                 var instanceName = Rsis.fn.loader.locationStorage(this.optns.url, "ui" + getNewDialogId());
                 this.create(instanceName);
                 var __MONITOR_WIDTH = GetWidth(), __MONITOR_HEIGHT = GetHeight();
-                if (typeof _Wf.StartLoadingDialog == "function") {
+                if (_Wf && typeof _Wf.StartLoadingDialog == "function") {
                     _Wf.StartLoadingDialog(instanceName);
                 }
                 var width = this.optns.width || __MONITOR_WIDTH - 7, height = this.optns.height || __MONITOR_HEIGHT, showCloseBox = this.optns.close, fullscreen = this.optns.fullscreen;
@@ -13241,7 +13249,7 @@ this._Wf = Rsis.fn.loader.getWf();
                     this.hideSelectBoxes();
                 }
             } catch (oErr) {
-                if (typeof _Wf.StopLoadingWinDialog == "function") {
+                if (_Wf && typeof _Wf.StopLoadingWinDialog == "function") {
                     _Wf.StopLoadingWinDialog();
                     _Wf.dataUiLoadingOk = false;
                 }
@@ -18959,7 +18967,7 @@ Calendar.version = JRetail.rsis.VersionJS;
 Calendar.objs = {
     _objects: null,
     add: function(_fs) {
-        if (this._objects == null) this._objects = new Map();
+        if (this._objects == null) this._objects = new MapRsis();
         var key = getIframeId();
         if (typeof key == "undefined" || key == null || key === "") {
             key = "noframe";
@@ -29978,13 +29986,13 @@ function eventBlurSelect(evt, objectId) {
 function retiraAcentos(txt) {
     try {
         txt = txt.toUpperCase();
-        txt = txt.replace(/[aáàâäãAÁÀÂÄÃ]/g, "a");
-        txt = txt.replace(/[eéèêëEÉÈÊË]/g, "e");
-        txt = txt.replace(/[iïîìíIÏÎÌÍ]/g, "i");
-        txt = txt.replace(/[oóôöòõOÓÔÖÒ]/g, "o");
-        txt = txt.replace(/[uûüùúUÛÜÙÚ]/g, "u");
-        txt = txt.replace(/[cçCÇ]/g, "c");
-        txt = txt.replace(/[nñNÑ]/g, "n");
+        txt = txt.replace(/[aï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½]/g, "a");
+        txt = txt.replace(/[eï¿½ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½]/g, "e");
+        txt = txt.replace(/[iï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½]/g, "i");
+        txt = txt.replace(/[oï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½]/g, "o");
+        txt = txt.replace(/[uï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½]/g, "u");
+        txt = txt.replace(/[cï¿½Cï¿½]/g, "c");
+        txt = txt.replace(/[nï¿½Nï¿½]/g, "n");
         txt = txt.replace(/[%]/g, "");
     } catch (oErr) {
         outPrint(oErr, "retiraAcentos", AutoCompleteRsis);
@@ -30320,7 +30328,7 @@ AutoComplete.setDimentions = function(obj, listHolder, maxlgth, mxL) {
                 if (textoDigitado !== null && textoDigitado !== "") {
                     textoDigitado = textoDigitado.replaceAll("%", "");
                 }
-                var newSelectBox = selfRsis.createList(that.getInput(obj), objXML, pathString), invalid = "_invalid", msgerror = "Não foi encontrado nenhum item para a pesquisa!";
+                var newSelectBox = selfRsis.createList(that.getInput(obj), objXML, pathString), invalid = "_invalid", msgerror = "Nï¿½o foi encontrado nenhum item para a pesquisa!";
                 var $msg = $R.$(".no-results");
                 if (newSelectBox !== null && (textoDigitado !== "" || searchFull == true)) {
                     if (pattern !== null && pattern !== "" && !getMapPattern(pattern)) {
@@ -32800,7 +32808,7 @@ var clearSuggestBox = function(object) {
     TabbedPaneRsis = {
         _FILE: "031tabbedPaneRsis.js",
         version: JRetail.rsis.VersionJS,
-        TabSelect: new Map(),
+        TabSelect: new MapRsis(),
         iframeTab: null,
         tabSelectedCount: 0,
         timeLoadIframe: 0,
@@ -33207,7 +33215,7 @@ function verifyDownloadHtmlNeeded(_iframe) {
             return false;
         }
     } catch (e) {
-        alert("Não foi possível estabelecer uma conexao com o servidor!");
+        alert("Nï¿½o foi possï¿½vel estabelecer uma conexao com o servidor!");
         return true;
     }
 }
@@ -35266,7 +35274,7 @@ function verifyFileUploadNeeded(vfileUpload) {
             return false;
         }
     } catch (e) {
-        alert("Não foi possível estabelecer uma conexao com o servidor!");
+        alert("Nï¿½o foi possï¿½vel estabelecer uma conexao com o servidor!");
         return true;
     }
 }
@@ -36266,7 +36274,7 @@ var listBoxSelected = null;
                         isChildNodeKey = true;
                     }
                     argsCollectionPath[0] = replaceClassName(argsCollectionPath[0]);
-                    var collection = getNodes(xmlListDomain, argsCollectionPath[0] + xQueryIdent.replaceAll("´", "'"));
+                    var collection = getNodes(xmlListDomain, argsCollectionPath[0] + xQueryIdent.replaceAll("ï¿½", "'"));
                     if (collection && collection.length > 0) {
                         var xpathFather = createPathFatherNode(argsCollectionPath[0]);
                         xpathFather = replaceClassName(xpathFather);
@@ -36816,7 +36824,7 @@ var listBoxSelected = null;
                 if (textoDigitado !== null && textoDigitado !== "") {
                     textoDigitado = textoDigitado.replaceAll("%", "");
                 }
-                var newSelectBox = selfRsis.createList(that.getInput(obj), objXML, pathString), invalid = "_invalid", msgerror = "Não foi encontrado nenhum item para a pesquisa!";
+                var newSelectBox = selfRsis.createList(that.getInput(obj), objXML, pathString), invalid = "_invalid", msgerror = "Nï¿½o foi encontrado nenhum item para a pesquisa!";
                 var $msg = $R.$(".no-results");
                 if (newSelectBox !== null && (textoDigitado !== "" || searchFull == true)) {
                     if (pattern !== null && pattern !== "" && !getMapPattern(pattern)) {
@@ -38788,7 +38796,7 @@ function renderHelpKeysButton(a, UIForm, enableHelp) {
             }
         }
     }
-    var cache = new Map(), XPATH_HELP_COMPONENTS = "/aplicacaoComponentes/aplicacaoComponente", enableHelp = true;
+    var cache = new MapRsis(), XPATH_HELP_COMPONENTS = "/aplicacaoComponentes/aplicacaoComponente", enableHelp = true;
     $R.define($R, "helpStored", {
         initialize: function(sequence) {
             this.get(sequence, true);

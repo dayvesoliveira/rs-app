@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from "./home/home.service";
+import { HomeService } from "./home.service";
 
 @Component({
   moduleId: module.id,
@@ -22,16 +22,16 @@ export class HomeComponent implements OnInit {
       { id: 20, name: 'Tornado' }
     ];
 
-    constructor(service: any) {
+    service: HomeService;
 
+    constructor(service: HomeService) {
+        this.service = service;
     }
 
     ngOnInit() {}
 
-
     open() {
-        console.log('aki');
+        this.service.showDialog('/jretail/view/jsp/teste.jsf');
     }
-
 
 }
