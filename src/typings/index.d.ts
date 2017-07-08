@@ -72,7 +72,30 @@ interface CrossDialog {
     
     dialog(_params:any, dialogArguments:any): void;
     
-    show(_url:string, _params:any, _args:any, _callback:any, _callbackArgs:any);
+    /**
+     * Funcao que executa a abertura da tela modal do framework do JRetail
+     * 
+     * @param url
+     * @param params define o tamanho de abertura da tela.
+     * 
+     * @param args passagem de parametros para tela que está sendo executada
+     * @param callback O callback de retorno da chamada modal.
+     * @param callbackArgs array de parametros a serem passados para a funcao callback da modal.
+     * @author Dayves Oliveira
+     */
+    show(url:string, params:any, args:any, callback:Function, callbackArgs:Array<any>);
+    /**
+     * Funcao que executa a abertura da tela modal do framework do JRetail
+     * 
+     * @param url
+     * @param params define o tamanho de abertura da tela.
+     * 
+     * @param args passagem de parametros para tela que está sendo executada
+     * @param callback O callback de retorno da chamada modal.
+     * @param callbackArgs array de parametros a serem passados para a funcao callback da modal.
+     * @author Dayves Oliveira
+     */
+    show(url:string, params:any, args:any, callback:Function[], callbackArgs:Array<any>);
     
     close(name:string): void;
     

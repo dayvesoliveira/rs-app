@@ -23,7 +23,9 @@ export class HomeService {
 
         crossDialog.show(_url, param, null, ()=>{
             param = null;
+            console.log('teste 123');
             //delete(param);
+            return <any>{ value:"a", description:"b" };
         }, null);
     }
 
