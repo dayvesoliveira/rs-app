@@ -2,6 +2,9 @@
 
 # folders
 /assets/*
+/assets/js/*
+/assets/css/*
+/assets/img/empresa/*
 
 # files
 exemplos.txt
