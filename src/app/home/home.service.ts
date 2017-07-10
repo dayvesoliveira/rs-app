@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { CrossDialog } from 
 
 @Injectable()
 export class HomeService {
     
     constructor() {}
 
-
-    //openModalMenu(this, '/jretail/jretail/view/jsp/mensagemApp.jsf', 2142005);
-
     showDialog(_url:string) {
+        
         //console.log( tithis.dialog );
+        //openModalMenu(this, '/jretail/jretail/view/jsp/mensagemApp.jsf', 2142005);
+
         let _params:any;
         let _args:any; 
         let _callback:any;

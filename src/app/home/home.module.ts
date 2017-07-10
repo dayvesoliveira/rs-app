@@ -1,14 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { AppComponent } from './app.component';
-import { RouterModule, PreloadAllModules } from '@angular/router';
-
-import { ROUTES } from './app.routes';
-
-import 'hammerjs';
 import { 
   FullscreenOverlayContainer,
   MdAutocompleteModule,
@@ -42,11 +34,9 @@ import {
   OverlayContainer,
   StyleModule } from '@angular/material';
 
-/*import { HomeService } from './home/home.service';
-import { HomeComponent, DialogMessages } from "./home/home.component";*/
-
-import { HomeModule } from './home/home.module';
-import { NoContentComponent } from './no-content/no-content.component';
+import { HomeComponent, DialogMessages } from "./home.component";
+import { HomeContentComponent } from './home-content/home-content.component';
+import { HomeService } from './home.service';
 
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
@@ -87,24 +77,20 @@ import { NoContentComponent } from './no-content/no-content.component';
 export class RsMaterialModule {}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  /*HomeComponent,
-    DialogMessages,*/
-    NoContentComponent
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    RsMaterialModule,
-    HomeModule,
-    RouterModule.forRoot( ROUTES )
+    CommonModule,
+    RsMaterialModule
   ],
-  entryComponents: [
-    /*DialogMessages*/
+  declarations: [ 
+      HomeComponent, 
+      HomeContentComponent,
+      DialogMessages
   ],
-  providers: [ /*HomeService*/ ],
-  bootstrap: [ AppComponent ]
+  exports: [ 
+      HomeComponent, 
+      HomeContentComponent,
+      DialogMessages
+  ],
+  providers: [ HomeService ]
 })
-export class AppModule { }
+export class HomeModule { }
