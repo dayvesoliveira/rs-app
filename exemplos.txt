@@ -12,11 +12,3 @@ https://github.com/AngularClass/angular-starter
 https://www.bennadel.com/blog/3169-adding-custom-typings-files-d-ts-in-an-angular-2-typescript-application.htm
 
 ./node_modules/.bin/ tipagens instalar --global --save arquivo: ./ app-tipagens / app.d.ts
-
-
---------------------
-var contextPath = "/jretail";
-var Message = Message || {parser: function(){} };
-var MESSAGES_JRETAIL = [];
-var contextResource  = "/resources";
-var skinFolder = "/skin/blue";

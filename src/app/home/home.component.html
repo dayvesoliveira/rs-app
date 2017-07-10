@@ -95,7 +95,13 @@
                             <tbody>
                                 <tr *ngFor="let dog of HEROES">
                                     <th scope="row">{{dog.id}}</th> 
-                                    <td>{{dog.name}}</td> 
+                                    <td>
+                                        <div class="button-row">
+                                                <button md-mini-fab (click)="edit(dog.id)">
+                                                    <md-icon>mode_edit</md-icon>
+                                                </button>
+                                        </div>
+                                    </td> 
                                     <td>{{dog.name}}</td> 
                                     <td>{{dog.name}}</td> 
                                     <td>{{dog.name}}</td> 
@@ -112,7 +118,7 @@
         </div>
         <br>
         <div class="button-row">
-            <button md-raised-button (click)="open()">
+            <button md-raised-button #btnmodal (click)="open()">
                 Dialog
             </button>
         </div>

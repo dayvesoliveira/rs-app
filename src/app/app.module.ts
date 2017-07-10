@@ -42,7 +42,7 @@ import {
   StyleModule } from '@angular/material';
 
 import { HomeService } from './home/home.service';
-import { HomeComponent } from "./home/home.component";
+import { HomeComponent, DialogMessages } from "./home/home.component";
 import { NoContentComponent } from './no-content/no-content.component';
 import 'hammerjs';
 
@@ -88,7 +88,8 @@ export class RsMaterialModule {}
   declarations: [
     AppComponent,
     HomeComponent,
-    NoContentComponent
+    NoContentComponent,
+    DialogMessages
   ],
   imports: [
     BrowserModule,
@@ -96,6 +97,9 @@ export class RsMaterialModule {}
     MaterialModule,
     RsMaterialModule,
     RouterModule.forRoot(ROUTES)
+  ],
+  entryComponents: [
+    DialogMessages
   ],
   providers: [ HomeService ],
   bootstrap: [AppComponent]
