@@ -1,0 +1,166 @@
+$base-w-confirm-container: 420px;
+$base-h-confirm-container: 140px;
+$base-font: 12px/22px 'Open Sans',arial,sans-serif;
+$base-font-name: 'Open Sans',arial,sans-serif;
+$base-bg-color: #fff;
+$base-bg-color-confirm-overlay: #eee;
+$base-line-height: 26px;
+$base-border-radius: 8px;
+
+$base-deg-315:315deg;
+$base-transparent:transparent;
+$base-transparent-33: transparent 33%;
+$base-transparent-66:transparent 66%;
+$base-rgba-33: rgba(0,0,0,0.12) 33%;
+$base-rgba-66:rgba(0,0,0,0.12) 66%;
+
+#confirm {
+	display:none; 
+	overflow: hidden;
+}
+.confirm-overlay {
+	background-color: $base-bg-color-confirm-overlay;
+}
+.confirm-container { 
+	width: $base-w-confirm-container;
+	height: $base-h-confirm-container; 
+	font: $base-font; 
+	text-align: left; 
+	background: $base-bg-color;
+	border: 0px solid #82ACBC;
+	border-radius: 5px 5px 0 0; 
+	box-shadow: 0 0 10px 2px rgb(122, 122, 122);
+}
+
+.dialog-active:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+	z-index:20;
+    background: rgba(0,0,0,0.3);
+}
+
+.header {
+	top: 0; 
+	position: relative; 
+	color: $base-bg-color;
+	font-size: 0.9;
+    font-family: $base-font-name;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #888;
+	border-top:1px solid rgb(83, 227, 245);
+	height: $base-line-height; 
+	line-height: $base-line-height;
+	width: 100%;
+	float: left;
+	background:#00a0b4;
+
+	& > span {
+    	padding-left:8px; 
+	}
+	& > #modal-close-box {
+		background: #007F8F;
+		display: inline;
+		position: relative;
+	}
+}
+
+
+/* :link, :visited, :hover, :active */
+.header > #modal-close-box > a.modal-close,
+.header > #modal-close-box > a.modal-close:link,
+.header > #modal-close-box > a.modal-close:visited {	
+    font: 19px tahoma, sans-serif;
+	padding: 0px 12px 28px 18px;
+    color: $base-bg-color;;
+    background: transparent;
+}
+
+.header > #modal-close-box > a.modal-close:hover {
+	background: #E81123; 
+}
+
+.header > #modal-close-box > a.modal-close:active
+{
+	font: 19px tahoma, sans-serif;
+	padding: 0px 12px 28px 18px;
+    color: $base-bg-color;
+    background: transparent;
+}
+
+.modal-close:before {
+	content: "x";
+}
+
+.dmyu {
+	border: 10px solid rgba(82, 82, 82, .7);
+	-webkit-border-radius: $base-border-radius;
+	   -moz-border-radius: $base-border-radius;
+	        border-radius: $base-border-radius;
+}
+.dmr {
+	background-color: #f2f2f2;
+	font-size: 24px;
+	padding: 10px;
+}
+
+.wdloading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: $base-bg-color;
+}
+.cmsg {
+	margin: 1em
+}
+.msg {
+	font-weight: bold;
+    margin-top: 150px;
+	text-align: center;
+}
+.wdloading, #stb {
+	background-color: #f5f5f5;
+}
+.wdloading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: $base-bg-color;
+}
+.lpb {
+	text-align: center;
+	width: 320px;
+	border: 1px solid #999;
+	padding: 1px;
+	height: 8px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.wdlpt {
+	width: 0;
+	height: 100%;
+	background-color: #6188f5;
+	background-size: 16px 8px;
+	background-image: -webkit-linear-gradient($base-deg-315,$base-transparent,$base-transparent-33,$base-rgba-33,$base-rgba-66,$base-transparent-66,$base-transparent);
+	background-image: -moz-linear-gradient($base-deg-315,$base-transparent,$base-transparent-33,$base-rgba-33,$base-rgba-66,$base-transparent-66,$base-transparent);
+	background-image: -o-linear-gradient($base-deg-315,$base-transparent,$base-transparent-33,$base-rgba-33,$base-rgba-66,$base-transparent-66,$base-transparent);
+	background-image: linear-gradient($base-deg-315,$base-transparent,$base-transparent-33,$base-rgba-33,$base-rgba-66,$base-transparent-66,$base-transparent);
+	-webkit-animation: pb 0.8s linear 0 infinite;
+}
+
+.invfr {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	border: 0;
+}

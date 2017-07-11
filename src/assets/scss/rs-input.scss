@@ -1,0 +1,157 @@
+$base-font-size-ipt: 10px;
+$base-float-ipt: left;
+$base-padding-ipt: 2px;
+$base-height-ipt: 15px;
+$base-border-ipt: 1px solid #9DB9C4;
+$base-border-invalid: 1px solid #660000;
+$base-font-size-ipt-9px: 9px;
+
+.dIpt {
+	float: left;
+	margin: 2px;
+	
+	>.labelCpts {
+		border: none;
+		float: left;
+		font-size: 10px;
+		margin: 1px 0 0 4px;
+		padding: 3px 3px 1px 0;
+		text-align: left;
+		vertical-align: middle;
+	}
+	
+	> input,
+	> div > input {
+		color: #23405E;
+		height: $base-height-ipt;
+		float: $base-float-ipt;
+		font-size: $base-font-size-ipt;
+		padding: $base-padding-ipt;
+		border: $base-border-ipt;
+		
+		&> .ipt {
+			background-color:#fff;
+		}
+		&> .iptRdy {
+			background-color: #f3f3f3
+		}
+		&> .iptReq {
+			background-color:#FFFCDA;
+		}
+		&> .iptInv {
+			font-size: $base-font-size-ipt-9px;
+			color: #800000;
+			background-color: #FFD0D0;
+			border: $base-border-invalid;
+			outline: $base-border-invalid;
+		}
+		&> .iptNoBorder {
+			font-size: 11px;
+			font-weight: bold;
+			color: #23405E;
+			border: 1px solid transparent;
+			background-color: transparent;
+		}
+		&> .colorRed {
+			color: #800000;
+			background-color: #FFD0D0;
+			border: $base-border-invalid;
+		}
+		&.red {
+			@extend .font9pxbold;
+			color: #800000;
+			border: #660000 1px solid;
+			background: #FFD0D0;
+		}
+		&.green {
+			@extend .font9pxbold;
+			color: black;
+			background: #59BC4A;
+			border: #3C8E81 1px solid;
+		}
+		&.orange {
+			@extend .font9pxbold;
+			color: #7c3b00;
+			border: #E5AD39 1px solid;
+			background: #F28E32;
+		}
+		&.blue {
+			@extend .font9pxbold;
+			color: #006354;
+			border: #3c5d8e 1px solid;
+			background: #5F92E2;
+		}
+		&.bgRed {
+			@extend .font11pxbold;
+			color: #fff;
+			background: #ff0d00;
+			border: #660000 1px solid;
+		}
+		&.bgGreen {
+			@extend .font11pxbold;
+			color: 23405E;
+			border: #3C8E81 1px solid;
+			background: #59BC4A;
+		}
+		&.bgOrange {
+			@extend .font11pxbold;
+			color: #23405E;
+			border: #E5AD39 1px solid;
+			background: yellow;
+		}
+		&.bgBlue {
+			@extend .font11pxbold;
+			color: #23405E;
+			border: #3c5d8e 1px solid;
+			background: #5F92E2;
+		}	
+	}
+	.font9pxbold {
+		font-size: $base-font-size-ipt-9px;
+		font-weight: bold;
+	}
+	.font11pxbold {
+		font-size: 11px;
+		font-weight: bold;
+	}
+
+	>.imgCal {
+		margin: 0px;
+		vertical-align: middle;
+		height: 16px;
+		float: left;
+		border: none;
+	}
+	
+	>.btnCal {
+		font-size: 14px;
+		text-align: center;
+		vertical-align: center;
+		color: #6B828C;
+		background: #CADCE3;
+		border: 1px solid #9DB9C4;
+		border-left: none;
+		padding: 1px 2px 2px 2px;
+		margin: 0;
+		width: 15px;
+		height: 16px;
+		float: left;
+		
+		&:before {
+			font-family: 'FontAwesome';
+			content:"\f073";
+		}
+	}
+
+	>.btnCalDsd {
+		border: 0;
+		background-color: transparent;
+			  filter: alpha(opacity=40);
+		     opacity: 0.4;
+		-moz-opacity: 0.4;
+		float: left;
+		cursor: default;
+	}
+}
+
+

@@ -1,0 +1,103 @@
+$base-font-size-lbl: 10px;
+$base-float-lbl: left;
+$base-margin-lbl: 2px;
+$base-padding-lbl: 3px 3px 1px 0;
+
+label,
+span {
+    &.label {
+        font-size: $base-font-size-lbl;
+        margin: $base-margin-lbl;
+        padding: $base-padding-lbl;
+        float: $base-float-lbl;
+    }
+    &.labelTop {
+        font-size: $base-font-size-lbl;
+        margin: 2px 2px -2px 5px;
+        padding: 3px 3px 1px 0;
+        border: none;
+        float: $base-float-lbl;
+    }
+    &.labelRight {
+        margin: 2px;
+        padding: 3px 3px 1px 0;
+        font-size: $base-font-size-lbl;
+        text-align: right;
+        border: none;
+        float: right;
+    }
+    &.labelBlue {
+        font-size: $base-font-size-lbl;
+        font-weight: bold;
+        color: #2A7C94;
+        border: none;
+        cursor: pointer
+    }
+    &.labelTitle {
+        font-size: 12px;
+        font-weight: bold;
+        color: #D8DFEA;
+        border: none;
+        cursor: pointer;
+    }
+    &.labelCpts {
+        font-size: $base-font-size-lbl;
+        margin: 1px 0 0 4px;
+        padding: 3px 3px 1px 0;
+        border: none;
+        float: $base-float-lbl;
+    }
+    &.lbClear {
+        font-size: 10px;
+        margin: 2px;
+        padding: 3px 3px 1px 0;
+        border: none;
+        clear: both
+    }
+    &.lbWiteCenter {
+        @extend .label-9pxbold;
+        margin: 2px;
+        padding: 3px 3px 1px 0;
+        color: #fff;
+        border: none;
+    }
+    &.lbWiteLeft {
+        @extend .label-9pxbold;
+        color: #fff;
+        margin: 2px;
+        padding: 3px 3px 1px 0;
+        border: none
+    }
+    &.legend {
+        font-size: 11px;
+        font-weight: bold;
+        color: #444441;
+        display:inline !important;
+    }
+    &.legend-normal {
+        font-size: 11px;
+        color: #444441;
+        display:inline !important;
+    }
+    &.legend-right {
+        font-size: 10px;
+        color: #444441;
+        text-align: right
+    }
+    &.legend-right {
+        font-size: 10px;
+        color: #444441;
+        text-align: right
+    }
+    &.legend-right:before {
+        font-family: 'Glyphicons Halflings';
+        font-size: 14px;
+        content:"\e008";
+        margin-left: -20px;
+        position: absolute;
+    }
+    &.label-9pxbold {
+        font-size: 9px;
+        font-weight: bold;
+    }
+}

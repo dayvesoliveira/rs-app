@@ -34,8 +34,8 @@ import {
   OverlayContainer,
   StyleModule } from '@angular/material';
 
-import { HomeComponent, DialogMessages } from "./home.component";
-import { HomeContentComponent } from './home-content/home-content.component';
+import { HomeComponent } from "./home.component";
+import { HomeContentComponent, DialogMessages } from './home-content/home-content.component';
 import { HomeService } from './home.service';
 
 /**
