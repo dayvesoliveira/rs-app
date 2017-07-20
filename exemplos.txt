@@ -12,3 +12,9 @@ https://github.com/AngularClass/angular-starter
 https://www.bennadel.com/blog/3169-adding-custom-typings-files-d-ts-in-an-angular-2-typescript-application.htm
 
 ./node_modules/.bin/ tipagens instalar --global --save arquivo: ./ app-tipagens / app.d.ts
+
+http://embed.plnkr.co/v7BMUv/
+http://jasonwatmore.com/post/2017/01/24/angular-2-custom-modal-window-dialog-box
+http://developer.telerik.com/topics/web-development/component-event-binding-output-angular-2/
+
+https://embed.plnkr.co/AuFMJVHpk9OaLr62puS1/
